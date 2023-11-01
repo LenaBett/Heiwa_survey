@@ -11,8 +11,8 @@
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>Mike</servlet-name>
-    <url-pattern>/jonathan</url-pattern>
+    <servlet-name>Heiwa</servlet-name>
+    <url-pattern>/lena</url-pattern>
   </servlet-mapping>
 
 </web-app>

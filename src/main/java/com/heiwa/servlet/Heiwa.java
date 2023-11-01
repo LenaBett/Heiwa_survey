@@ -19,7 +19,7 @@ public class Heiwa implements Servlet {
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         PrintWriter print = servletResponse.getWriter();
-        print.print("<b>Heiwa Survey<b/>");
+        print.print("<b>Means peace<b/>");
     }
 
     @Override
