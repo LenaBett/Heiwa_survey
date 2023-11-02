@@ -15,6 +15,12 @@
     <servlet-class>com.heiwa.servlet.Heiwa1</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>Heiwa2</servlet-name>
+    <servlet-class>com.heiwa.servlet.Heiwa2</servlet-class>
+  </servlet>
+
+
   <servlet-mapping>
     <servlet-name>Heiwa</servlet-name>
     <url-pattern>/lena</url-pattern>
@@ -23,6 +29,11 @@
   <servlet-mapping>
     <servlet-name>Heiwa1</servlet-name>
     <url-pattern>/lena1</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Heiwa2</servlet-name>
+    <url-pattern>/lena2</url-pattern>
   </servlet-mapping>
 
 </web-app>
