@@ -1,3 +1,11 @@
-com/heiwa/servlet/Heiwa1.class
-com/heiwa/servlet/Heiwa2.class
-com/heiwa/servlet/Heiwa.class
+com/heiwa/home/Results.class
+com/heiwa/home/Home.class
+com/heiwa/auth/Login.class
+com/heiwa/surveyapp/model/view/html/HeiwaPage.class
+com/heiwa/surveyapp/model/entity/Answer.class
+com/heiwa/surveyapp/model/view/css/HeiwaCss.class
+com/heiwa/surveyapp/model/view/toolbar/Navigation.class
+com/heiwa/home/TakeSurvey.class
+com/heiwa/home/CreateSurvey.class
+com/heiwa/surveyapp/model/entity/Survey.class
+com/heiwa/surveyapp/model/entity/Question.class
