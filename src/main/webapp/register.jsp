@@ -4,14 +4,34 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, #061957, #2d0b55);
+}
+.registration-form{
+    background: #f5f5f5;
+    padding: 12px 20px;
+    width: 500px;
+    margin: 65px auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+  }
 
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 0px;
   box-sizing: border-box;
 }
 
@@ -22,27 +42,12 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
+
 }
 
 button:hover {
   opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
 }
 
 .container {
@@ -71,24 +76,20 @@ span.psw {
 
 <h2>${initParam.AppName}</h2>
 
-<h1>${applicationScope.pageLink}</h1>
 
-<span style="font-weight:bold;font-size:13px;">Login</span>
-
-<span style="font-weight:bold;font-size:13px;color:red;">Have An Account? <a href="index.jsp">Login</a></span>
 <form action="./user" method="post">
 
-  <div class="container">
-    <label for="username"><b>Username</b></label>
+  <div class="registration-form">
+    <span style="font-weight:bold;font-size:13px;">Register</span>
     <input type="text" placeholder="Enter Username" name="username" required>
 
-    <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
 
-    <label for="confirmPassword"><b>Password</b></label>
-    <input type="password" placeholder="Confirm Enter Password" name="confirmPassword" required>
+    <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
 
     <button type="submit">Register</button>
+
+    <span style="font-weight:bold;font-size:13px;color:red;">Have An Account? <a href="index.jsp">Login</a></span>
   </div>
 
 </form>

@@ -8,12 +8,11 @@ public class Survey implements Serializable {
     private String title;
     private String description;
 
-    // private List<Question> survey;
+    private List<Question> survey;
 
     public Survey(String title, String description) {
         this.title = title;
         this.description = description;
-        //this.survey = survey;
     }
 
     public String getTitle() {

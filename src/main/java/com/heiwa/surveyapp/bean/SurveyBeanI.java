@@ -5,14 +5,8 @@ import com.heiwa.surveyapp.model.Survey;
 
 import java.util.List;
 
-public interface SurveyBeanI {
+public interface SurveyBeanI extends GenericBeanI<Survey>{
 
-    List<Survey> list();
 
-    Survey addOrUpdateSurvey(Survey survey);
-
-    Result displayResult(Result result);
-
-    void deleteSurvey(Survey survey);
 
 }

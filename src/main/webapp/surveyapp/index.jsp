@@ -5,16 +5,16 @@
 <html>
     <head>
         <jsp:include page="../style/style.jsp">
-            <jsp:param name="pageColor" value="red" />
+            <jsp:param name="pageColor" value="#fff" />
         </jsp:include>
     </head>
 
     <body>
+        <h3 style="font-size:2em;color:#fff"> ${initParam.AppName} | User: ${sessionScope.username} </h3><br/>
         <jsp:useBean id="htmlMenuToolBar" class="com.heiwa.surveyapp.view.helper.HtmlMenuToolbar" />
         <jsp:setProperty name="htmlMenuToolBar" property="activeLink" value='${requestScope.activeMenu}' />
         ${htmlMenuToolBar.menu}
 
-        <h3> ${initParam.AppName} | User: ${sessionScope.username} </h3><br/>
         ${requestScope.content}
     </body>
 </html>

@@ -11,35 +11,41 @@
 </style>
 </head>
 <body>
-    <h2>${initParam.AppName}</h2>
+    <h1>${initParam.AppName}</h1>
     <c:set var="pageLink" scope="application" value="Home/<a href='index.jsp'>Login</a>/Register" />
     <c:choose>
         <c:when test='${sessionScope.loggedInId ne null}' >
             <c:redirect url="./home" />
         </c:when>
         <c:otherwise>
-            <span style="font-weight:bold;font-size:13px;">Login</span>
+            <span style="font-weight:bold;font-size:15px;">Welcome</span>
             <form action="./login" method="post">
+                <div class="login-form">
 
-              <jsp:useBean id="loginForm" class="com.heiwa.surveyapp.userbean.LoginForm" scope="page"/>
-              Time to Login ${loginForm.timeToLogin}
+                    <jsp:useBean id="loginForm" class="com.heiwa.surveyapp.userbean.LoginForm" scope="page"/>
+                     Time to Login ${loginForm.timeToLogin}
 
-              <div class="container">
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="${loginForm.usernamePlaceHolder}" name="username" required>
+                     <span style="font-weight:bold;font-size:15px;text-align:left;color:green;">Sign in</span>
 
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="${loginForm.passwordPlaceHolder}" name="password" required>
+                    <div class="input-field">
+                      <input type="text" placeholder="${loginForm.usernamePlaceHolder}" name="username" required>
+                    </div>
+                    <div class="input-field">
+                      <input type="password" placeholder="${loginForm.passwordPlaceHolder}" name="password" required>
+                    </div>
 
-                <button type="submit">Login</button>
-              </div>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
 
-              <div class="container">
-                <span class="psw">Forgot <a href="#">password?</a></span>
-              </div>
+                    <div class="action">
+
+                        <button type="submit">Login</button>
+                    </div>
+
+                    <span style="font-weight:bold;font-size:14px;color:green;">Not Registered? <a href="register.jsp">Register</a></span>
+
+                </div>
             </form>
 
-            <span style="font-weight:bold;font-size:13px;color:green;">Dont Have An Account? <a href="register.jsp">Register</a></span>
 
         </c:otherwise>
     </c:choose>
