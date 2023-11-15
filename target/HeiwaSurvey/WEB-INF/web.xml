@@ -4,17 +4,10 @@
 
 <web-app>
   <display-name>Heiwa Survey</display-name>
-  <context-param>
-    <param-name>AppName</param-name>
-    <param-value>My Heiwa Project</param-value>
-  </context-param>
 
   <context-param>
-    <param-name>username</param-name>
-    <param-value>lena</param-value>
+    <param-name>AppName</param-name>
+    <param-value>My Survey Project</param-value>
   </context-param>
-  <context-param>
-    <param-name>password</param-name>
-    <param-value>lena123</param-value>
-  </context-param>
+
 </web-app>
