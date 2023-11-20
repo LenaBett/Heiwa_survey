@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet("/results")
-public class ResultsAction extends BaseAction {
+public class ViewResultsAction extends BaseAction {
 
     SurveyBeanI surveyBean = new SurveyBean();
     @Override

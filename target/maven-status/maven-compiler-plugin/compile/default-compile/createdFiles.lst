@@ -1,8 +1,11 @@
 com/heiwa/surveyapp/userbean/LoginForm.class
 com/heiwa/surveyapp/model/Survey.class
 com/heiwa/surveyapp/action/LoginAction.class
+com/heiwa/surveyapp/bean/QuestionBean.class
+com/heiwa/surveyapp/bean/AnswerBean.class
 com/heiwa/database/helper/DbTable.class
 com/heiwa/surveyapp/bean/AuthBean.class
+com/heiwa/surveyapp/bean/AnswerBeanI.class
 com/heiwa/surveyapp/view/helper/HtmlMenu.class
 com/heiwa/surveyapp/action/LogoutAction.class
 com/heiwa/surveyapp/model/Result.class
@@ -28,8 +31,9 @@ com/heiwa/surveyapp/view/helper/HtmlFormField.class
 com/heiwa/surveyapp/model/Question.class
 com/heiwa/database/helper/DbColumn.class
 com/heiwa/surveyapp/view/helper/HtmlForm.class
+com/heiwa/surveyapp/bean/QuestionBeanI.class
 com/heiwa/surveyapp/action/TakeSurveyAction.class
 com/heiwa/surveyapp/bean/AuthBeanI.class
 com/heiwa/surveyapp/bean/GenericBeanI.class
+com/heiwa/surveyapp/action/ViewResultsAction.class
 com/heiwa/surveyapp/view/helper/MenuLinkStatus.class
-com/heiwa/surveyapp/action/ResultsAction.class
