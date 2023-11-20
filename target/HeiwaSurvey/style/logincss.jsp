@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #080710;
+    background-color: #d1d1d1;
 }
 .background{
     width: 430px;
@@ -64,13 +64,14 @@ form{
 }
 form *{
     font-family: 'Poppins',sans-serif;
-    color: #ffffff;
+    color: #8a8a8a;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
 form h3{
     font-size: 32px;
+    color: #424242;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
@@ -78,6 +79,7 @@ form h3{
 
 label{
     display: block;
+     color: #424242;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
@@ -94,14 +96,14 @@ input{
     font-weight: 300;
 }
 ::placeholder{
-    color: #e5e5e5;
+   color: #696868;
 }
 button{
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
     color: #080710;
-    padding: 15px 10px;
+    padding: 15px 0;
     font-size: 18px;
     font-weight: 600;
     border-radius: 5px;
@@ -109,10 +111,11 @@ button{
 }
 span.psw {
       float: right;
+      color: #424242;
       padding-top: 10px;
       font-weight:bold;
       font-size:14px;
-      color:white;
+      color:#424242;
     }
 span {
       float: left;

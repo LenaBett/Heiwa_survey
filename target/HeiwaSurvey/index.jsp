@@ -39,7 +39,7 @@
 
                 <button type="submit">Log In</button>
 
-                <span style="font-weight:bold;font-size:14px;color:white;">Not Registered? <a href="register.jsp">Register</a></span>
+                <span style="font-weight:bold;font-size:14px;color:#424242;">Not Registered? <a href="register.jsp">Register</a></span>
 
             </form>
         </c:otherwise>

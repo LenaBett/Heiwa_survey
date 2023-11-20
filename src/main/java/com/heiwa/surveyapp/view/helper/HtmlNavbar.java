@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HtmlMenuToolbar implements HtmlMenu, Serializable {
+public class HtmlNavbar implements HtmlMenu, Serializable {
 
     private String menu;
 
@@ -24,7 +24,7 @@ public class HtmlMenuToolbar implements HtmlMenu, Serializable {
 
         this.activateLink(getActiveLink());
 
-        String menuBar = "<div class=\"topnav\">";
+        String menuBar = "<ul class=\"main-nav\">";
 
         for (MenuLink link : links)
             menuBar += "<a " + (link.getStatus() == MenuLinkStatus.ACTIVE? "class=\"active\"" : "")

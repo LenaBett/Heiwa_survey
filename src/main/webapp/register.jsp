@@ -34,7 +34,7 @@
 
         <button type="submit">Register</button>
 
-        <span style="font-weight:bold;font-size:14px;color:white;">Already registered? <a href="index.jsp">Login</a></span>
+        <span style="font-weight:bold;font-size:14px;color:#424242;">Already registered? <a href="index.jsp">Login</a></span>
 
     </form>
 </body>
