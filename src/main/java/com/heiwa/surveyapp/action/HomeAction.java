@@ -21,10 +21,4 @@ public class HomeAction extends BaseAction {
         renderPage(req, resp, 0, Survey.class, new ArrayList<Survey>());
 
     }
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        surveyBean.addOrUpdateSurvey(serializeForm(Survey.class, req.getParameterMap()));
-
-        resp.sendRedirect("./home");
-
-    }
 }
