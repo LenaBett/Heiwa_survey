@@ -106,4 +106,55 @@ public class HtmlCmpRender implements Serializable {
     private static String ifBlank(String target, String alternative){
         return StringUtils.isBlank(target)? alternative : StringUtils.trimToEmpty(target);
     }
+
+    public static String card(Class<?> modelCard) {
+        HtmlCard htmlCardMaker = null;
+        if (modelCard.isAnnotationPresent(HtmlCard.class))
+            htmlCardMaker = modelCard.getAnnotation(HtmlCard.class);
+
+        if (htmlCardMaker == null)
+            return StringUtils.EMPTY;
+
+        StringBuilder htmlCards = new StringBuilder();
+
+
+        for (Field field : modelCard.getDeclaredFields()) {
+
+            HtmlCardContent htmlCardContent = field.getAnnotation(HtmlCardContent.class);
+
+            if (htmlCardContent != null) {
+                String title = htmlCardContent.title();
+
+                htmlCards.append("<div class=\"container\" action=\"")
+                        .append(htmlCardMaker.viewUrl())
+                        .append("\" method=\"")
+                        .append(htmlCardMaker.httpMethod())
+                        .append("\">")
+                        .append("  <div class=\"d-flex\">")
+                        .append("    <div class=\"card flex-row\">")
+                        .append("       <div class= \"card-body\">")
+                        .append("           <h5 class=\"card-title\">").append(title).append("</h5>\n")
+                        .append("                  <p class=\"card-text\"></p>\n")
+                        .append("                  <button> <a href=\"takeSurvey.jsp\">Take survey</a></button>\n")
+                        .append("                </div>\n")
+                        .append("          </div>\n")
+                        .append("    </div>\n")
+                        .append("</div>");
+            }
+        }
+
+        return htmlCards.toString();
+    }
+
+    public static String paragraph(Class<?> dataClass) {
+        if (!dataClass.isAnnotationPresent(Title.class))
+            return StringUtils.EMPTY;
+
+        Title title= dataClass.getAnnotation(Title.class);
+
+        StringBuilder trBuilder = new StringBuilder("<p>" + title.pageTitle() + "</p>");
+
+       return trBuilder.toString();
+    }
+
 }

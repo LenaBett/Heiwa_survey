@@ -1,13 +1,24 @@
 package com.heiwa.surveyapp.model;
 
+import com.heiwa.surveyapp.view.helper.*;
+
 import java.io.Serializable;
 import java.util.List;
 
-public class Survey implements Serializable {
+@Title(pageTitle = "Survey Page")
+@HtmlForm(label = "Survey", addUrl = "./createSurvey?action=add", url = "./createSurvey")
+@HtmlCard(addUrl = "./createSurvey?submit", viewUrl = "./takeSurvey")
 
+public class Survey {
+    @HtmlFormField(label= "Survey Title" , required = true )
+    @HtmlCardContent(title = "Survey title")
     private String title;
+
+    @HtmlFormField(label= "Survey Description", required = true )
+    @HtmlCardContent(title = "Description")
     private String description;
 
+    @HtmlFormField(label= "Question", required = true )
     private List<Question> survey;
 
     public Survey(String title, String description) {

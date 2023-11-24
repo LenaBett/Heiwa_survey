@@ -1,5 +1,8 @@
 package com.heiwa.surveyapp.model;
 
+import com.heiwa.surveyapp.view.helper.Title;
+
+@Title(pageTitle = "Answer Page")
 public class Answer {
 
     private String answerText;

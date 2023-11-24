@@ -6,7 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface DbColumn {
-    String columnName();
+@Target({ElementType.TYPE, ElementType.FIELD})
+public @interface DbTableColumn {
+    String name();
+
+    String definition() default "varchar(255)";
 }

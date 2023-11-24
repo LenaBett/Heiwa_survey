@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.Date;
 
 @WebServlet(urlPatterns = "/login")
@@ -31,16 +32,21 @@ public class LoginAction extends BaseAction{
 
         User loginUser  = serializeForm(User.class, req.getParameterMap());
 
-        User userDetails = authBean.authenticate(loginUser);
+        User userDetails = null;
+        try {
+            userDetails = authBean.authenticate(loginUser);
 
-        if (userDetails != null) {
-            HttpSession httpSession = req.getSession(true);
+            if (userDetails != null) {
+                HttpSession httpSession = req.getSession(true);
 
-            httpSession.setAttribute("loggedInId", new Date().getTime() + "");
-            httpSession.setAttribute("username", loginUser.getUsername());
+                httpSession.setAttribute("loggedInId", new Date().getTime() + "");
+                httpSession.setAttribute("username", loginUser.getUsername());
 
-            resp.sendRedirect("./home");
+                resp.sendRedirect("./home");
 
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
 
         PrintWriter print = resp.getWriter();

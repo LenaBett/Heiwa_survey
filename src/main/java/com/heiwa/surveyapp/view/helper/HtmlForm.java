@@ -12,6 +12,7 @@ public @interface HtmlForm {
     String label();
 
     String url();
+    String addUrl();
 
     String httpMethod() default "POST";
 

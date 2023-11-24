@@ -1,7 +1,10 @@
 package com.heiwa.surveyapp.model;
 
+import com.heiwa.surveyapp.view.helper.Title;
+
 import java.util.List;
 
+@Title(pageTitle = "Questions Page")
 public class Question {
     private String question;
     private List<Answer> answer;
