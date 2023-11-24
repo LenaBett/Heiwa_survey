@@ -3,18 +3,18 @@ package com.heiwa.database;
 import com.heiwa.surveyapp.model.Survey;
 import com.heiwa.surveyapp.model.User;
 
+import javax.xml.crypto.Data;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Database implements Serializable {
     private String databaseCreateAt;
 
-    private List<User> users = new ArrayList<>();
-
-    private List<Survey> surveys = new ArrayList<>();
+    private List<Object> data = new ArrayList<>();
 
     private static Database dbInstance;
 
@@ -30,23 +30,25 @@ public class Database implements Serializable {
         return dbInstance;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<Object> getData() {
+        return data;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setData(List<Object> data) {
+        this.data = data;
     }
 
-    public List<Survey> getSurveys() {
-        return surveys;
-    }
+    public List<Object> getData(Class<?> clazz) {
 
-    public void setSurveys(List<Survey> surveys) {
-        this.surveys = surveys;
+        return data
+                .stream()
+                .filter(clazz::isInstance)
+                .collect(Collectors.toList());
+
     }
 
     public String getDatabaseCreateAt() {
         return databaseCreateAt;
     }
+
 }

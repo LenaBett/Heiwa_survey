@@ -13,7 +13,6 @@ public class HtmlNavbar implements HtmlMenu, Serializable {
     private final List<MenuLink> links = new ArrayList<>();
 
     {
-        links.add(new MenuLink("./home", "Home", MenuLinkStatus.ACTIVE));
         links.add(new MenuLink("./createSurvey", "Create Survey", MenuLinkStatus.ACTIVE));
         links.add(new MenuLink("./takeSurvey", "Take Survey", MenuLinkStatus.ACTIVE));
         links.add(new MenuLink("./results", "View Results", MenuLinkStatus.ACTIVE));

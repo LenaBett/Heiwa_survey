@@ -21,7 +21,7 @@ public class TakeSurveyAction extends BaseAction {
 
     }
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        surveyBean.addOrUpdateSurvey(serializeForm(Survey.class, req.getParameterMap()));
+        surveyBean.addOrUpdate(serializeForm(Survey.class, req.getParameterMap()));
 
         resp.sendRedirect("./takeSurvey");
     }

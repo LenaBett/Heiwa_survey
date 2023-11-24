@@ -4,6 +4,7 @@ import com.heiwa.surveyapp.bean.SurveyBean;
 import com.heiwa.surveyapp.bean.SurveyBeanI;
 import com.heiwa.surveyapp.model.Survey;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,15 +13,15 @@ import java.io.IOException;
 
 @WebServlet("/createSurvey")
 public class CreateSurveyAction extends BaseAction{
-
-    private final SurveyBeanI surveyBean = new SurveyBean();
+    @EJB
+    SurveyBeanI surveyBean;
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        renderPage(req, resp, 1,  Survey.class, surveyBean.list());
+        renderPage(req, resp, 1,  Survey.class, surveyBean.list(Survey.class));
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        surveyBean.addOrUpdateSurvey(serializeForm(Survey.class, req.getParameterMap()));
+        surveyBean.addOrUpdate(serializeForm(Survey.class, req.getParameterMap()));
 
         resp.sendRedirect("./createSurvey");
 
