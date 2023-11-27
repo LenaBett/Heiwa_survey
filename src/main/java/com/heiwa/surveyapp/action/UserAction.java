@@ -5,6 +5,7 @@ import com.heiwa.surveyapp.bean.UserBean;
 import com.heiwa.surveyapp.bean.UserBeanI;
 import com.heiwa.surveyapp.model.User;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,11 +14,15 @@ import java.io.IOException;
 
 @WebServlet("/user")
 public class UserAction extends BaseAction {
-
-    UserBeanI userBean = new UserBean();
+    @EJB
+    UserBeanI userBean;
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        userBean.register(serializeForm(User.class, req.getParameterMap()));
+        try {
+            userBean.register(serializeForm(User.class, req.getParameterMap()));
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
         resp.sendRedirect("./");
     }
 }

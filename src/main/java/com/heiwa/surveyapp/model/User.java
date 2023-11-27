@@ -1,12 +1,15 @@
 package com.heiwa.surveyapp.model;
 
+import com.heiwa.database.helper.DbTable;
+import com.heiwa.database.helper.DbTableColumn;
+
 import java.io.Serializable;
 
-public class User implements Serializable {
-    private Long id;
-
+@DbTable(name = "users")
+public class User extends BaseEntity {
+    @DbTableColumn(name = "username")
     private String username;
-
+    @DbTableColumn(name = "password")
     private String password;
 
     private String confirmPassword;
@@ -14,18 +17,11 @@ public class User implements Serializable {
     public User(){}
 
     public User(Long id, String username, String password) {
-        this.id = id;
+        setId(id);
         this.username = username;
         this.password = password;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;

@@ -42,12 +42,15 @@ public class BaseAction extends HttpServlet {
 
         request.setAttribute("content", HtmlCmpRender.paragraph(entity));
 
-//        if (StringUtils.trimToEmpty(request.getParameter("action")).equals("add"))
+
+//       if (StringUtils.trimToEmpty(request.getParameter("action")).equals("add"))
 //            request.setAttribute("content", HtmlCmpRender.form(entity));
 //        else
 //            request.setAttribute("content", HtmlCmpRender.table(entityList, Survey.class));
-//
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("./surveyapp/index.jsp");
-//        dispatcher.forward(request, response);
+
+
+
+      RequestDispatcher dispatcher = request.getRequestDispatcher("./surveyapp/index.jsp");
+       dispatcher.forward(request, response);
     }
 }

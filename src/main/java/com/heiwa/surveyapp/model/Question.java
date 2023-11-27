@@ -7,13 +7,13 @@ import java.util.List;
 @Title(pageTitle = "Questions Page")
 public class Question {
     private String question;
-    private List<Answer> answer;
+    private String answer;
 
-    public List<Answer> getAnswer() {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(List<Answer> answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 

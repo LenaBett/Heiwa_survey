@@ -4,29 +4,33 @@ import com.heiwa.database.Database;
 import com.heiwa.database.MysqlDatabase;
 import com.heiwa.surveyapp.model.User;
 
+import javax.ejb.EJB;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
 import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
+@Stateless
 public class AuthBean implements AuthBeanI, Serializable {
+    @EJB
+    MysqlDatabase database;
 
-    public User authenticate(User loginUser) throws SQLException {
+    public User authenticate(User loginUser){
 
-        PreparedStatement sqlStmt = MysqlDatabase.getInstance().getConnection()
-                .prepareStatement("select id,username from users where username=? and password=? limit 1");
-        sqlStmt.setString(1, loginUser.getUsername());
-        sqlStmt.setString(2, loginUser.getPassword());
-
-        ResultSet result = sqlStmt.executeQuery();
-
-        User user = new User();
-
-        while (result.next()){
-            user.setId(result.getLong("id"));
-            user.setUsername(result.getString("username"));
+        try {
+            loginUser.setPassword(loginUser.getPassword());
+        } catch (Exception ex){
+            throw new RuntimeException(ex.getMessage());
         }
 
-        return user;
+        List<User> users = database.fetch(loginUser);
+
+        if (users.isEmpty() || users.get(0) == null)
+            throw new RuntimeException("Invalid user!!");
+
+        return users.get(0);
     }
 }

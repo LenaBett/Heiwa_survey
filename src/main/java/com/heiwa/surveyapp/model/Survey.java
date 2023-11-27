@@ -1,24 +1,29 @@
 package com.heiwa.surveyapp.model;
 
+import com.heiwa.database.helper.DbTable;
+import com.heiwa.database.helper.DbTableColumn;
 import com.heiwa.surveyapp.view.helper.*;
 
-import java.io.Serializable;
 import java.util.List;
 
 @Title(pageTitle = "Survey Page")
 @HtmlForm(label = "Survey", addUrl = "./createSurvey?action=add", url = "./createSurvey")
 @HtmlCard(addUrl = "./createSurvey?submit", viewUrl = "./takeSurvey")
+@DbTable(name = "survey")
 
-public class Survey {
+public class Survey extends BaseEntity{
     @HtmlFormField(label= "Survey Title" , required = true )
     @HtmlCardContent(title = "Survey title")
+    @DbTableColumn(name = "title")
     private String title;
 
     @HtmlFormField(label= "Survey Description", required = true )
     @HtmlCardContent(title = "Description")
+    @DbTableColumn(name = "desciption")
     private String description;
 
     @HtmlFormField(label= "Question", required = true )
+    @DbTableColumn(name = "questions")
     private List<Question> survey;
 
     public Survey(String title, String description) {
