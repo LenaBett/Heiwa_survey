@@ -14,17 +14,19 @@ import java.util.List;
 public class Survey extends BaseEntity{
     @HtmlFormField(label= "Survey Title" , required = true )
     @HtmlCardContent(title = "Survey title")
-    @DbTableColumn(name = "title")
+    @DbTableColumn(name = "Title")
     private String title;
 
     @HtmlFormField(label= "Survey Description", required = true )
-    @HtmlCardContent(title = "Description")
-    @DbTableColumn(name = "desciption")
+    @HtmlCardContent(title= "Description")
+    @DbTableColumn(name = "Description")
     private String description;
 
     @HtmlFormField(label= "Question", required = true )
-    @DbTableColumn(name = "questions")
-    private List<Question> survey;
+    private List<Question> questions;
+
+    public Survey() {
+    }
 
     public Survey(String title, String description) {
         this.title = title;
@@ -47,11 +49,11 @@ public class Survey extends BaseEntity{
         this.description = description;
     }
 
-    //public List<Question> getSurvey() {
-    //    return survey;
-    //}
+    public List<Question> getQuestions() {
+        return questions;
+    }
 
-    // public void setSurvey(List<Question> survey) {
-    //    this.survey = survey;
-    //}
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
 }

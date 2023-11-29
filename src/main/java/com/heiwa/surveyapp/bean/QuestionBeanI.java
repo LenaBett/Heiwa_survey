@@ -1,4 +1,6 @@
 package com.heiwa.surveyapp.bean;
 
-public interface QuestionBeanI {
+import com.heiwa.surveyapp.model.Question;
+
+public interface QuestionBeanI extends GenericBeanI<Question>{
 }

@@ -4,6 +4,7 @@
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/SurveyBean.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/database/helper/DbTable.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/HtmlCardContent.java
+/home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/model/AnswerType.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/model/HomePageContent.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/UserBeanI.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/GenericBean.java
@@ -11,13 +12,13 @@
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/SurveyBeanI.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/action/BaseAction.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/AnswerBeanI.java
-/home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/action/ViewResultsAction.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/action/CreateSurveyAction.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/Title.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/HtmlMenu.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/AnswerBean.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/GenericBeanI.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/MenuLinkStatus.java
+/home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/action/ResultsAction.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/QuestionBeanI.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/database/Database.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/database/helper/DbTableId.java

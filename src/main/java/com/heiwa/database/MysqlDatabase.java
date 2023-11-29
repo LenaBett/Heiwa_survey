@@ -47,6 +47,8 @@ public class MysqlDatabase implements Serializable {
             List<Class<?>> entities = new ArrayList<>();
             entities.add(User.class);
             entities.add(Survey.class);
+            entities.add(Question.class);
+            entities.add(Answer.class);
             entities.add(Result.class);
 
             for (Class<?> clazz : entities) {

@@ -10,10 +10,10 @@ import java.util.List;
 @DbTable(name = "results")
 public class Result extends BaseEntity{
 
-    @DbTableColumn(name = "respondent")
+    @DbTableColumn(name = "Respondent")
     private String respondent;
-    @DbTableColumn(name = "question")
+    @DbTableColumn(name = "Question")
     private String question;
-    @DbTableColumn(name = "answer")
+    @DbTableColumn(name = "Answer")
     private List<Answer> answers;
 }

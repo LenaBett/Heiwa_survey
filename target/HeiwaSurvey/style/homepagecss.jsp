@@ -66,6 +66,7 @@ a {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 1px;
 	border-radius: 5px;
+	transition: height 0.3s ease;
 }
 @media (min-width: 769px) {
 	.header,
@@ -135,6 +136,7 @@ body{
 .background{
     width: 430px;
     height: 520px;
+    transition: height 0.3s ease;
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
@@ -171,9 +173,11 @@ span.login {
       font-size:14px;
       color:white;
 }
+
 form{
     height: 520px;
     width: 400px;
+    transition: height 0.3s ease;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -184,6 +188,57 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+}
+.dynamicForm{
+    height: 700px;
+    transition: height 0.3s ease;
+    width: 800px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    transition: height 0.3s ease;
+    padding: 50px 35px;
+}
+
+.formBackground{
+    width: 800px;
+    height: 500px;
+    transition: height 0.3s ease;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+}
+.formBackground .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:first-child{
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -30px;
+    bottom: -80px;
 }
 form *{
     font-family: 'Poppins',sans-serif;
@@ -232,6 +287,18 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
+.addQuestion , .createSurvey {
+    display:inline-block;
+    margin-top: 20px;
+    width: 30%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
 span.psw {
       float: right;
       color: #424242;
@@ -244,14 +311,19 @@ span {
       float: left;
       padding-top: 10px;
     }
-        .card {
+
+span.answerType{
+      float: left;
+      padding-top: 5px;
+    }
+.card {
       /* Add shadows to create the "card" effect */
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
-    }
+}
 
     /* On mouse-over, add a deeper shadow */
-    .card:hover {
+.card:hover {
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }
 

@@ -13,7 +13,7 @@
     		<jsp:useBean id="htmlNavbar" class="com.heiwa.surveyapp.view.helper.HtmlNavbar" />
             <jsp:setProperty name="htmlNavbar" property="activeLink" value='${requestScope.activeMenu}' />
             ${htmlNavbar.menu}
-    	</header>
+    </header>
     <body>
      ${requestScope.content}
     </body>
