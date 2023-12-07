@@ -42,7 +42,7 @@ public class BaseAction extends HttpServlet {
             requestMap.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
 
 
-            // requestMap.forEach((k,v)-> System.out.println(k + " " + v[0]));
+
 
             beanUtilsBean.populate(clazzInstance, requestMap);
 
@@ -52,20 +52,6 @@ public class BaseAction extends HttpServlet {
 
         return clazzInstance;
     }
-
-//        T clazzInstance;
-//
-//        try {
-//            clazzInstance = (T) clazz.getDeclaredConstructor().newInstance();
-//
-//            BeanUtils.populate(clazzInstance, requestMap);
-//
-//        } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | InstantiationException e ) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        return clazzInstance;
-//    }
 
     public void renderPage(HttpServletRequest request, HttpServletResponse response, int activeMenu,
                            Class<?> entity, List<?> entityList)
@@ -77,23 +63,10 @@ public class BaseAction extends HttpServlet {
 
         if (servletPath.contains("/home")){
             request.setAttribute("content",HtmlCmpRender.card(Survey.class));
-        } else if (servletPath.contains("/createSurvey")) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("./surveyapp/createSurvey.jsp");
+        }else if (servletPath.contains("/takeSurvey")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./surveyapp/takeSurvey");
             dispatcher.forward(request, response);
         }
-
-//        }else if (servletPath.contains("/takeSurvey")) {
-//
-//        }else if (servletPath.contains("/results")) {
-//
-//        }else
-
-
-//       if (StringUtils.trimToEmpty(request.getParameter("action")).equals("add"))
-//            request.setAttribute("content", HtmlCmpRender.form(entity));
-//        else
-//            request.setAttribute("content", HtmlCmpRender.table(entityList, Survey.class));
-
 
 
       RequestDispatcher dispatcher = request.getRequestDispatcher("./surveyapp/index.jsp");

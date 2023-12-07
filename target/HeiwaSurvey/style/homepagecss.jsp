@@ -22,8 +22,7 @@ ul {
 
 h2,h3,a {
     font-size: 1em;
-
-	color: white;
+    color: rgba(124, 124, 124, 0.8);
 }
 
 a {
@@ -48,7 +47,7 @@ a {
 }
 
 .main-nav a {
-	color: white;
+	color: rgba(124, 124, 124, 0.8);
 	font-size: 1em;
 }
 
@@ -100,15 +99,6 @@ a {
   background-color: white;
 }
 
-.image-div {
-  flex: 1;
-  width: 50%;
-}
-
-.image-div>img {
-  width: 80%;
-}
-
 .text-div {
   flex: 1;
   width: 80%;
@@ -130,17 +120,21 @@ a:hover, a:active {
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #d1d1d1;
+body {
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .background{
     width: 430px;
-    height: 520px;
+    height: auto;
     transition: height 0.3s ease;
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
     top: 50%;
+
 }
 .background .shape{
     height: 200px;
@@ -171,11 +165,12 @@ span.login {
       padding-bottom: 10px;
       font-weight:bold;
       font-size:14px;
-      color:white;
+      color:rgba(124, 124, 124, 0.8);
 }
 
+/*Create Survey Form*/
 form{
-    height: 520px;
+    height: auto;
     width: 400px;
     transition: height 0.3s ease;
     background-color: rgba(255,255,255,0.13);
@@ -193,7 +188,7 @@ form{
     height: 700px;
     transition: height 0.3s ease;
     width: 800px;
-    background-color: rgba(255,255,255,0.13);
+    background-color: rgba(242, 244, 244, 0.8);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -201,7 +196,7 @@ form{
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    box-shadow: 0 0 40px rgba(143, 251, 255, 0.8);
     transition: height 0.3s ease;
     padding: 50px 35px;
 }
@@ -249,7 +244,7 @@ form *{
 }
 form h3{
     font-size: 32px;
-    color: #424242;
+    color: rgba(124, 124, 124, 0.8);
     font-weight: 500;
     line-height: 42px;
     text-align: center;
@@ -257,7 +252,7 @@ form h3{
 
 label{
     display: block;
-     color: #424242;
+     color: rgba(124, 124, 124, 0.8);
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
@@ -272,6 +267,7 @@ input{
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
+    color:
 }
 ::placeholder{
    color: #696868;
@@ -292,7 +288,7 @@ button{
     margin-top: 20px;
     width: 30%;
     background-color: #ffffff;
-    color: #080710;
+    color: rgba(124, 124, 124, 0.8);
     padding: 15px 0;
     font-size: 14px;
     font-weight: 600;
@@ -316,27 +312,57 @@ span.answerType{
       float: left;
       padding-top: 5px;
     }
+
+
+
+    /* Home Page Cards */
 .card {
-      /* Add shadows to create the "card" effect */
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
+    width: 90%;
+    background-color: ffffff;
+    margin-left: 100px;
+    margin-top: 30px;
+    border: 0.5px solid #a2a2a2;
+    box-shadow: 0 10px 10px 0 rgba(143, 251, 255, 0.8);
+    transition: 0.3s;
+    border-radius: 40px; /* 5px rounded corners */
 }
 
-    /* On mouse-over, add a deeper shadow */
+.custom-card-body {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between; /* Align children at the beginning and end */
+  align-items: flex-start; /* Align children at the start */
+}
 .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
+    box-shadow: 0 12px 16px 0 rgba(255, 166, 94, 0.8);
+}
 
-    .container {
-      padding: 2px 16px;
-    }
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      border-radius: 10px; /* 5px rounded corners */
-    }
+.content-container {
+  padding-top: 5px;
+  margin-left: 30px;
+  flex: 1; /* Allow the content container to grow to fill available space */
+}
 
-    }
+.button-container {
+  margin-left: 10%; /* Push the button container to the right */
+  margin-top: 30px; /* Add space between paragraph and buttons */
+}
 
+a.btn-primary{
+    margin-top: 20px;
+    margin-right: 50px;
+    width: 90%;
+    position: center;
+    background-color: #ffffff;
+    color: rgba(124, 124, 124, 0.8);
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #a2a2a2;
+    cursor: pointer;
+}
+
+/*Take survey form */
 
 </style>

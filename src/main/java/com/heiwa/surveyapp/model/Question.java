@@ -1,20 +1,23 @@
 package com.heiwa.surveyapp.model;
 
-import com.heiwa.database.helper.DbTable;
-import com.heiwa.database.helper.DbTableColumn;
-import com.heiwa.surveyapp.view.helper.Title;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.List;
 
-@Title(pageTitle = "Questions Page")
-@DbTable(name = "questions")
+@Entity
+@Table(name = "Question")
 public class Question extends BaseEntity {
-    @DbTableColumn(name = "Question_Text")
+    public Question() {
+    }
+
+    @Column(name = "question_text", nullable = false)
     private String questionText;
 
-    @DbTableColumn(name = "Answer_Type")
+    @Column(name = "answer_type", nullable = false)
     private String answerType;
-    @DbTableColumn(name = "Answer")
+    @Transient
     private String answer;
 
     public String getAnswerType() {
@@ -37,8 +40,16 @@ public class Question extends BaseEntity {
         return questionText;
     }
 
-    public void setQuestionText(String question) {
+    public void setQuestionText(String questionText) {
         this.questionText = questionText;
     }
 
+    @Override
+    public String toString() {
+        return "Question{" +
+                "questionText='" + questionText + '\'' +
+                ", answerType='" + answerType + '\'' +
+                ", answer='" + answer + '\'' +
+                '}';
+    }
 }

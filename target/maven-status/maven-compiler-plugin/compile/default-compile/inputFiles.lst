@@ -20,7 +20,6 @@
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/MenuLinkStatus.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/action/ResultsAction.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/QuestionBeanI.java
-/home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/database/Database.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/database/helper/DbTableId.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/database/MysqlDatabase.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/UserBean.java

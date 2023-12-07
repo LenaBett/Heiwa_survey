@@ -23,7 +23,8 @@ public class CreateSurveyAction extends BaseAction{
     QuestionBeanI questionBean;
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        renderPage(req, resp, 1,  Survey.class, surveyBean.list(Survey.class));
+//        renderPage(req, resp, 1,  Survey.class, surveyBean.list(Survey.class));
+        resp.sendRedirect("./createSurvey.jsp");
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -38,8 +39,8 @@ public class CreateSurveyAction extends BaseAction{
         Question question = new Question();
         question.setQuestionText(req.getParameter("questionText"));
         question.setAnswerType(req.getParameter("answerType"));
-//        question.setAnswerType(req.getParameter("answerType"));
 
+        System.out.println("question = " + question);
         questionBean.addOrUpdate(question);
 
 

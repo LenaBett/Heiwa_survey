@@ -5,11 +5,18 @@ import com.heiwa.surveyapp.model.User;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
 @Local
 public class UserBean extends GenericBean<User> implements UserBeanI {
+
+    @PersistenceContext
+    private EntityManager em;
+
 
     @Override
     public boolean register(User user) {
@@ -24,7 +31,8 @@ public class UserBean extends GenericBean<User> implements UserBeanI {
         //2. hash password
         //3. initiate event to send email ...Observer design pattern
 
-        getDao().addOrUpdate(user);
+        //getDao().addOrUpdate(user);
+        em.merge(user);
 
         return false;
     }

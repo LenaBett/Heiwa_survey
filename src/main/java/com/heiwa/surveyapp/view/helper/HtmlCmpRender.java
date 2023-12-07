@@ -125,21 +125,22 @@ public class HtmlCmpRender implements Serializable {
             if (htmlCardContent != null) {
                 String title = htmlCardContent.title();
 
-                htmlCards.append("<div class=\"container\" action=\"")
+                htmlCards.append("<div class=\"card\" action=\"")
                         .append(htmlCardMaker.viewUrl())
                         .append("\" method=\"")
                         .append(htmlCardMaker.httpMethod())
                         .append("\">")
-                        .append("  <div class=\"d-flex\">")
-                        .append("    <div class=\"card flex-row\">")
-                        .append("       <div class= \"card-body\">")
-                        .append("           <h5 class=\"card-title\">").append(title).append("</h5>\n")
-                        .append("                  <p class=\"card-text\"></p>\n")
-                        .append("                  <button> <a href=\"takeSurvey.jsp\">Take survey</a></button>\n")
-                        .append("                </div>\n")
-                        .append("          </div>\n")
-                        .append("    </div>\n")
-                        .append("</div>");
+                        .append("  <div class=\"custom-card-body\">")
+                        .append("    <div class=\"content-container\">")
+                        .append("       <h2 class=\"card-title\">").append(htmlCardContent.title()).append("</h2>")
+                        .append("       <p class=\"card-text\">").append(htmlCardContent.title()).append("</p>\n")
+                        .append("     </div>")
+                        .append("     <div class=\"button-container\">")
+                        .append("        <a href=\"./takeSurvey\" class=\"btn btn-primary\">Take Survey</a>")
+                        .append("     </div>\n")
+                        .append("  </div>\n")
+                        .append("</div>\n");
+
             }
         }
 

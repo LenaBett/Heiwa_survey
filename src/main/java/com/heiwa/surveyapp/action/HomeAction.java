@@ -19,6 +19,7 @@ public class HomeAction extends BaseAction {
     SurveyBeanI surveyBean = new SurveyBean();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         renderPage(req, resp, 0, Survey.class, new ArrayList<Survey>());
 
     }

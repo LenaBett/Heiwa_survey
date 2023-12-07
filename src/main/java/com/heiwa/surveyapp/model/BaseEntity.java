@@ -1,13 +1,16 @@
 package com.heiwa.surveyapp.model;
 
-import com.heiwa.database.helper.DbTableColumn;
-import com.heiwa.database.helper.DbTableId;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
+@MappedSuperclass
 public class BaseEntity implements Serializable {
-    @DbTableId
-    @DbTableColumn(name = "id", definition = "int")
+   @Id
+   @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
     public Long getId() {

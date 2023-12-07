@@ -1,7 +1,5 @@
 package com.heiwa.surveyapp.action;
 
-import com.heiwa.database.Database;
-import com.heiwa.surveyapp.bean.UserBean;
 import com.heiwa.surveyapp.bean.UserBeanI;
 import com.heiwa.surveyapp.model.User;
 

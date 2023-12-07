@@ -3,15 +3,21 @@ package com.heiwa.surveyapp.model;
 import com.heiwa.database.helper.DbTable;
 import com.heiwa.database.helper.DbTableColumn;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.io.Serializable;
 
-@DbTable(name = "users")
+@Entity
+@Table(name = "User")
 public class User extends BaseEntity {
-    @DbTableColumn(name = "username")
+    @Column(name = "username")
     private String username;
-    @DbTableColumn(name = "password")
+    @Column(name = "password")
     private String password;
 
+    @Transient
     private String confirmPassword;
 
     public User(){}

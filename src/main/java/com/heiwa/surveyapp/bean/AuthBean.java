@@ -1,22 +1,17 @@
 package com.heiwa.surveyapp.bean;
 
-import com.heiwa.database.Database;
-import com.heiwa.database.MysqlDatabase;
 import com.heiwa.surveyapp.model.User;
 
-import javax.ejb.EJB;
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.io.Serializable;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 @Stateless
 public class AuthBean implements AuthBeanI, Serializable {
-    @EJB
-    MysqlDatabase database;
+    @PersistenceContext
+    EntityManager em;
 
     public User authenticate(User loginUser){
 
@@ -26,7 +21,10 @@ public class AuthBean implements AuthBeanI, Serializable {
             throw new RuntimeException(ex.getMessage());
         }
 
-        List<User> users = database.fetch(loginUser);
+        List<User> users = em.createQuery("FROM User u WHERE u.password=:password AND u.username=:username", User.class)
+                .setParameter("password", loginUser.getPassword())
+                .setParameter("username", loginUser.getUsername())
+                .getResultList();
 
         if (users.isEmpty() || users.get(0) == null)
             throw new RuntimeException("Invalid user!!");

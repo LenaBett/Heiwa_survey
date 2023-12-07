@@ -1,5 +1,6 @@
 package com.heiwa.surveyapp.dao;
 
+import javax.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.List;
 
@@ -10,5 +11,8 @@ public interface GenericDaoI <T> extends Serializable {
     void addOrUpdate(T entity);
 
     void delete(T entity);
+
+    EntityManager getEm();
+    void SetEm(EntityManager em);
 
 }

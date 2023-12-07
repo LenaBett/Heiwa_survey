@@ -1,23 +1,27 @@
 package com.heiwa.surveyapp.dao;
 
 import java.util.List;
-import com.heiwa.database.MysqlDatabase;
 
-import javax.ejb.EJB;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 public class GenericDao<T> implements GenericDaoI<T> {
-    @EJB
-    MysqlDatabase database;
+    @PersistenceContext
+    private EntityManager em;
     @SuppressWarnings({"unchecked"})
     @Override
     public List<T> list(Class<?> entity) {
-        return (List<T>) database.fetch(entity);
+        String jpql  = "FROM " + entity.getClass().getSimpleName() + " e";
+
+        List<T> results = (List<T>) em.createQuery(jpql, entity.getClass()).getResultList();
+
+        return results;
 
     }
 
     @Override
     public void addOrUpdate(T entity) {
-        database.saveOrUpdate(entity);
+        em.merge(entity);
 
     }
 
@@ -26,11 +30,16 @@ public class GenericDao<T> implements GenericDaoI<T> {
 
     }
 
-    public MysqlDatabase getDatabase() {
-        return database;
+    public EntityManager getEm() {
+        return em;
     }
 
-    public void setDatabase(MysqlDatabase database) {
-        this.database = database;
+    @Override
+    public void SetEm(EntityManager em) {
+
+    }
+
+    public void setEm(EntityManager em) {
+        this.em = em;
     }
 }
