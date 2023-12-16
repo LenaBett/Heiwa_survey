@@ -3,14 +3,12 @@ package com.heiwa.surveyapp.model;
 import com.heiwa.database.helper.DbTable;
 import com.heiwa.database.helper.DbTableColumn;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User extends BaseEntity {
     @Column(name = "username")
     private String username;
@@ -19,6 +17,9 @@ public class User extends BaseEntity {
 
     @Transient
     private String confirmPassword;
+
+    @OneToOne(mappedBy ="respondent", cascade = CascadeType.ALL)
+    private Answer answer;
 
     public User(){}
 

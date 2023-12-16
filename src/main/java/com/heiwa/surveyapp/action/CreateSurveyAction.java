@@ -38,7 +38,6 @@ public class CreateSurveyAction extends BaseAction{
 
         Question question = new Question();
         question.setQuestionText(req.getParameter("questionText"));
-        question.setAnswerType(req.getParameter("answerType"));
 
         System.out.println("question = " + question);
         questionBean.addOrUpdate(question);

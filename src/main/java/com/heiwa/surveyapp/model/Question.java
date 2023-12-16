@@ -1,39 +1,23 @@
 package com.heiwa.surveyapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Question")
+@Table(name = "question")
 public class Question extends BaseEntity {
-    public Question() {
-    }
+
+    @ManyToOne
+    @JoinColumn(name = "survey_id", nullable = false)
+    private Survey survey;
 
     @Column(name = "question_text", nullable = false)
     private String questionText;
 
-    @Column(name = "answer_type", nullable = false)
-    private String answerType;
-    @Transient
-    private String answer;
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List <Answer> answers;
 
-    public String getAnswerType() {
-        return answerType;
-    }
-
-    public void setAnswerType(String answerType) {
-        this.answerType = answerType;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public Question() {
     }
 
     public String getQuestionText() {
@@ -48,8 +32,6 @@ public class Question extends BaseEntity {
     public String toString() {
         return "Question{" +
                 "questionText='" + questionText + '\'' +
-                ", answerType='" + answerType + '\'' +
-                ", answer='" + answer + '\'' +
                 '}';
     }
 }

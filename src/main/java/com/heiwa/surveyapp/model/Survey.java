@@ -1,33 +1,28 @@
 package com.heiwa.surveyapp.model;
-
-import com.heiwa.database.helper.DbTable;
-import com.heiwa.database.helper.DbTableColumn;
 import com.heiwa.surveyapp.view.helper.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Survey")
+@Table(name = "survey")
 @HtmlForm(label = "Survey", addUrl = "./createSurvey?action=add", url = "./createSurvey")
 @HtmlCard(addUrl = "./createSurvey?submit", viewUrl = "./takeSurvey")
 
 public class Survey extends BaseEntity{
     @HtmlFormField(label= "Survey Title" , required = true )
     @HtmlCardContent(title = "Survey title")
-    @Column(name = "Title")
+    @Column(name = "title")
     private String title;
 
     @HtmlFormField(label= "Survey Description", required = true )
     @HtmlCardContent(title= "Description")
-    @Column(name = "Description")
+    @Column(name = "description")
     private String description;
 
-    @Transient
+
     @HtmlFormField(label= "Question", required = true )
+    @OneToMany(mappedBy = "survey", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Question> questions;
 
     public Survey() {
