@@ -8,7 +8,7 @@ public interface GenericDaoI <T> extends Serializable {
 
     List<T> list(Class<?> entity);
 
-    void addOrUpdate(T entity);
+    T addOrUpdate(T entity);
 
     void delete(T entity);
 

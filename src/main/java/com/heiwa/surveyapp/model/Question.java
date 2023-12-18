@@ -14,9 +14,6 @@ public class Question extends BaseEntity {
     @JoinColumn(name = "survey_id", nullable = false)
     private Survey survey;
 
-    @Formula("(survey_id)")
-    private Long surveyId;
-
     @Column(name = "question_text", nullable = false)
     private String questionText;
 
@@ -29,14 +26,6 @@ public class Question extends BaseEntity {
 
     public void setSurvey(Survey survey) {
         this.survey = survey;
-    }
-
-    public Long getSurveyId() {
-        return surveyId;
-    }
-
-    public void setSurveyId(Long surveyId) {
-        this.surveyId = surveyId;
     }
 
     public List<Answer> getAnswers() {

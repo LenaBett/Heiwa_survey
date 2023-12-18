@@ -13,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/createSurvey")
 public class CreateSurveyAction extends BaseAction{
@@ -34,14 +36,32 @@ public class CreateSurveyAction extends BaseAction{
 
         survey.setTitle(req.getParameter("title"));
         survey.setDescription(req.getParameter("description"));
-        surveyBean.addOrUpdate(survey);
 
+        boolean loop = true;
+        var firstField = 4;
+        List<String> questions = new ArrayList<>();
+        while (loop) {
+            if (req.getParameter("field"+firstField) != null) {
+                questions.add(req.getParameter("field"+firstField));
+                firstField++;
+            } else {
+                loop = false;
+            }
+        }
+
+        Survey savedSurvey = surveyBean.addOrUpdate(survey);
         Question question = new Question();
         question.setQuestionText(req.getParameter("questionText"));
-
-
-        System.out.println("question = " + question);
+        question.setSurvey(savedSurvey);
         questionBean.addOrUpdate(question);
+
+        for (var questionText: questions) {
+            Question question1 = new Question();
+            question1.setQuestionText(questionText);
+            question1.setSurvey(savedSurvey);
+            questionBean.addOrUpdate(question1);
+        }
+
 
 
         resp.sendRedirect("./createSurvey");
