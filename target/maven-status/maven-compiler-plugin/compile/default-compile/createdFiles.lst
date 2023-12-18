@@ -19,11 +19,11 @@ com/heiwa/surveyapp/rest/config/Rest.class
 com/heiwa/surveyapp/view/helper/HtmlForm.class
 com/heiwa/surveyapp/dao/GenericDao.class
 com/heiwa/surveyapp/bean/QuestionBeanI.class
+com/heiwa/surveyapp/utility/SurveyCodeGenerator.class
 com/heiwa/surveyapp/view/helper/Title.class
 com/heiwa/database/helper/DbTableColumn.class
 com/heiwa/surveyapp/view/helper/MenuLinkStatus.class
 com/heiwa/surveyapp/model/BaseEntity.class
-com/heiwa/surveyapp/model/AnswerType.class
 com/heiwa/surveyapp/view/helper/HtmlCardContent.class
 com/heiwa/surveyapp/model/Survey.class
 com/heiwa/surveyapp/bean/AnswerBean.class

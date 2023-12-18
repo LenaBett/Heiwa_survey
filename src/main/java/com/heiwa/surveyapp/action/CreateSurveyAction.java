@@ -1,13 +1,13 @@
 package com.heiwa.surveyapp.action;
 
-import com.heiwa.surveyapp.bean.QuestionBean;
 import com.heiwa.surveyapp.bean.QuestionBeanI;
-import com.heiwa.surveyapp.bean.SurveyBean;
 import com.heiwa.surveyapp.bean.SurveyBeanI;
 import com.heiwa.surveyapp.model.Question;
 import com.heiwa.surveyapp.model.Survey;
+import com.heiwa.surveyapp.utility.SurveyCodeGenerator;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +24,9 @@ public class CreateSurveyAction extends BaseAction{
     @EJB
     QuestionBeanI questionBean;
 
+    @Inject
+    private SurveyCodeGenerator surveyCodeGenerator;
+
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 //        renderPage(req, resp, 1,  Survey.class, surveyBean.list(Survey.class));
         resp.sendRedirect("./createSurvey.jsp");
@@ -34,6 +37,7 @@ public class CreateSurveyAction extends BaseAction{
 
         Survey survey = serializeForm(Survey.class, req.getParameterMap());
 
+        survey.setSurveyCode(surveyCodeGenerator.generateSurveyCode());
         survey.setTitle(req.getParameter("title"));
         survey.setDescription(req.getParameter("description"));
 

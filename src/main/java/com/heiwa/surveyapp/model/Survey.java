@@ -1,6 +1,7 @@
 package com.heiwa.surveyapp.model;
 import com.heiwa.surveyapp.view.helper.*;
 
+import javax.inject.Inject;
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,7 +20,8 @@ public class Survey extends BaseEntity{
     @HtmlCardContent(title= "Description")
     @Column(name = "description")
     private String description;
-
+    @Column(name = "surveyCode")
+    private String surveyCode;
 
     @HtmlFormField(label= "Question", required = true )
     @OneToMany(mappedBy = "survey", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -47,6 +49,14 @@ public class Survey extends BaseEntity{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getSurveyCode() {
+        return surveyCode;
+    }
+
+    public void setSurveyCode(String surveyCode) {
+        this.surveyCode = surveyCode;
     }
 
     public List<Question> getQuestions() {

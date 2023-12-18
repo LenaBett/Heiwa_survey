@@ -4,7 +4,6 @@
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/SurveyBean.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/database/helper/DbTable.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/HtmlCardContent.java
-/home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/model/AnswerType.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/model/HomePageContent.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/UserBeanI.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/bean/GenericBean.java
@@ -41,6 +40,7 @@
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/HtmlTableColHeader.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/event/AppInit.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/action/LogoutAction.java
+/home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/utility/SurveyCodeGenerator.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/HtmlFormFieldType.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/HtmlTable.java
 /home/cbett/Java-training/Heiwa_survey/src/main/java/com/heiwa/surveyapp/view/helper/HtmlCard.java
