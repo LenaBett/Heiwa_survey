@@ -66,8 +66,6 @@ public class CreateSurveyAction extends BaseAction{
             questionBean.addOrUpdate(question1);
         }
 
-
-
         resp.sendRedirect("./createSurvey");
 
     }

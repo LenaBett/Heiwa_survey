@@ -26,6 +26,7 @@ com/heiwa/surveyapp/view/helper/MenuLinkStatus.class
 com/heiwa/surveyapp/model/BaseEntity.class
 com/heiwa/surveyapp/view/helper/HtmlCardContent.class
 com/heiwa/surveyapp/model/Survey.class
+com/heiwa/surveyapp/rest/api/BaseRestApi.class
 com/heiwa/surveyapp/bean/AnswerBean.class
 com/heiwa/database/helper/DbTable.class
 com/heiwa/surveyapp/bean/AuthBean.class
@@ -42,6 +43,7 @@ com/heiwa/surveyapp/view/helper/HtmlFormFieldType.class
 com/heiwa/surveyapp/view/helper/HtmlFormField.class
 com/heiwa/surveyapp/model/Question.class
 com/heiwa/surveyapp/action/TakeSurveyAction.class
+com/heiwa/surveyapp/rest/api/SurveyRestApi.class
 com/heiwa/surveyapp/bean/AuthBeanI.class
 com/heiwa/surveyapp/bean/GenericBeanI.class
 com/heiwa/database/helper/DbTableId.class
