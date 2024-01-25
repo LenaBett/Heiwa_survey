@@ -24,13 +24,13 @@
         <h4>Register </h4>
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Enter Username" name="username" required>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
          <label for="confirm password">Confirm Password</label>
-         <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+         <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword"required>
 
         <button type="submit">Register</button>
 

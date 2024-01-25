@@ -30,16 +30,16 @@
                 <h4>Login Here</h4>
 
                 <label for="username">Username</label>
-                <input type="text" placeholder="${loginForm.usernamePlaceHolder}" name="username" required>
+                <input type="text" placeholder="${loginForm.usernamePlaceHolder}" name="username" id="username" required>
 
                 <label for="password">Password</label>
-                <input type="password" placeholder="${loginForm.passwordPlaceHolder}" name="password" required>
+                <input type="password" placeholder="${loginForm.passwordPlaceHolder}" name="password" id="password" required>
 
                 <span class="psw">Forgot <a href="#">password?</a></span>
 
                 <button type="submit">Log In</button>
 
-                <span style="font-weight:bold;font-size:14px;color:#424242;">Not Registered? <a href="register.jsp">Register</a></span>
+                <span class= "register" style="font-weight:bold;font-size:14px;color:#424242;">Not Registered? <a href="register.jsp">Register</a></span>
 
             </form>
         </c:otherwise>

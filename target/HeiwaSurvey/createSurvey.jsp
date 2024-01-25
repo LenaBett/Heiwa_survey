@@ -27,15 +27,15 @@
     <div id="formContainer">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" placeholder="Enter Survey Title" name="title" required>
+            <input type="text" placeholder="Enter Survey Title" name="title" id="title" required>
         </div>
         <div class="form-group">
             <label for="description">Description:</label>
-            <input type="text" placeholder="Enter Survey Description" name="description" required>
+            <input type="text" placeholder="Enter Survey Description" name="description" id="description" required>
         </div>
         <div class="form-group">
             <label for="question" >Question:</label>
-            <input type="text" placeholder="Enter a Question" name="questionText" required>
+            <input type="text" placeholder="Enter a Question" name="questionText" id="questionText" required>
 
             <select name="answerType">
                 <option value="TEXT">Text</option>

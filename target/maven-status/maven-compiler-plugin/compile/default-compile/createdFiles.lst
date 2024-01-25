@@ -1,6 +1,7 @@
 com/heiwa/surveyapp/userbean/LoginForm.class
 com/heiwa/surveyapp/action/LoginAction.class
 com/heiwa/surveyapp/bean/QuestionBean.class
+com/heiwa/surveyapp/rest/api/QuestionRestApi.class
 com/heiwa/surveyapp/bean/AnswerBeanI.class
 com/heiwa/surveyapp/view/helper/HtmlMenu.class
 com/heiwa/surveyapp/action/LogoutAction.class
@@ -13,6 +14,7 @@ com/heiwa/surveyapp/model/Answer.class
 com/heiwa/event/AppInit.class
 com/heiwa/surveyapp/bean/UserBeanI.class
 com/heiwa/surveyapp/dao/GenericDaoI.class
+com/heiwa/surveyapp/selenium/SeleniumFxnTest.class
 com/heiwa/surveyapp/view/helper/HtmlTableColHeader.class
 com/heiwa/surveyapp/action/HomeAction.class
 com/heiwa/surveyapp/rest/config/Rest.class
@@ -24,6 +26,7 @@ com/heiwa/surveyapp/view/helper/Title.class
 com/heiwa/database/helper/DbTableColumn.class
 com/heiwa/surveyapp/view/helper/MenuLinkStatus.class
 com/heiwa/surveyapp/model/BaseEntity.class
+com/heiwa/surveyapp/selenium/SeleniumUnitTest.class
 com/heiwa/surveyapp/view/helper/HtmlCardContent.class
 com/heiwa/surveyapp/model/Survey.class
 com/heiwa/surveyapp/rest/api/BaseRestApi.class
