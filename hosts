@@ -1,0 +1,7 @@
+[hosts]
+34.16.186.151
+
+[hosts:vars]
+## ansible_ssh_private_key_file=~/.ssh/id_rsa
+ansible_user=cbett
+ansible_python_interpreter=/user/bin/python3

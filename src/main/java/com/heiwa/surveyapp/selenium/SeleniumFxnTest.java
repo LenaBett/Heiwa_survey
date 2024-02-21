@@ -11,7 +11,7 @@ public class SeleniumFxnTest {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/HeiwaSurvey/");
+        driver.get("http://34.16.186.151:8080/HeiwaSurvey/");
 
         //register
         WebElement registerLink = driver.findElement(By.linkText("Register"));
