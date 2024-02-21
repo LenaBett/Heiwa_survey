@@ -102,22 +102,6 @@ workflows:
           filters:
             branches:
               only: main
-  build-tags:
-    jobs:
-      - build:
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
-      - publish-tag:
-          requires:
-            - build
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
       - deploy:
           requires:
             - publish-latest
@@ -125,4 +109,4 @@ workflows:
             branches:
               only:
                 - main
-                - devops
+      
