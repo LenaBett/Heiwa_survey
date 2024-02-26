@@ -9,7 +9,7 @@ public class SeleniumUnitTest {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/HeiwaSurvey/");
+        driver.get("http://34.16.186.151:8080/HeiwaSurvey/");
         WebElement usernameInput = driver.findElement(By.id("username"));
         WebElement passwordInput = driver.findElement(By.id("password"));
         WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
